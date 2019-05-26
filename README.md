@@ -14,13 +14,87 @@ npm install --save react-order
 
 ```jsx
 import React, { Component } from 'react'
+import Order from 'react-order'
 
-import MyComponent from 'react-order'
+// Components
+import TestComponent1 from './TestComponent1'
+import TestComponent2 from './TestComponent2'
+import TestComponent3 from './TestComponent3'
 
 class Example extends Component {
+
   render () {
+		const { isReverse } = this.props;
+
     return (
-      <MyComponent />
+				<Order>
+						<TestComponent1 order={isReverse ? 3 : 1}/>	
+						<TestComponent2 order={2}/>	
+						<TestComponent3 order={isReverse ? 1 : 3}/>	
+				</Order>
+    )
+  }
+}
+```
+
+OR 
+
+```jsx
+import React, { Component } from 'react'
+import Order from 'react-order'
+
+// Components
+import TestComponent from './TestComponent'
+
+class Example extends Component {
+
+  render () {
+		const { isMobileVersion } = this.props;
+
+		const list = isMobileVersion ? 
+			["first", "second", "third"] 
+			: 
+			["third", "first", "second"];
+
+    return (
+				<Order list={list}>
+						<TestComponent orderkey="first">First Component</TestComponent>	
+						<TestComponent orderkey="second">Second Component</TestComponent>	
+						<div orderkey="third">Third element</div>	
+				</Order>
+    )
+  }
+}
+```
+
+
+OR 
+
+```jsx
+import React, { Component } from 'react'
+import Order from 'react-order'
+
+// Components
+import TestComponent from './TestComponent'
+
+class Example extends Component {
+
+  render () {
+		const { isMobileVersion } = this.props;
+
+		const list = {
+				first: isMobileVersion ? 1 : 2, 
+				second: isMobileVersion ? 2 : 3, 
+				third: isMobileVersion 3 : 1
+		};
+
+
+    return (
+				<Order list={list}>
+							<TestComponent orderkey="first">First Component</TestComponent>	
+							<TestComponent orderkey="second">Second Component</TestComponent>	
+							<div orderkey="third">Third element</div>	
+				</Order>
     )
   }
 }
