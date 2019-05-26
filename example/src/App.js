@@ -1,41 +1,53 @@
-import React, { Component } from 'react'
+import React, * as react from 'react';
+import cn from 'classnames';
 
-import Order from 'react-order'
+import Example1 from './Example1';
+import Example2 from './Example2';
 
-export default class App extends Component {
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+export default class App extends react.Component {
 	constructor(props) {
 		super(props);
 
-		this.initialEnum = ["first", "second", "third", "fourth"];
-
 		this.state = {
-			list: this.initialEnum
+			tab: '1'
 		};
-
 	}
 
-	reverse = () => {
+	onClickTab = event => {
 		this.setState({
-			list: this.state.list.reverse()
+			tab: event.target.dataset.tab
 		})
+		
 	}
-
+	
   render () {
+		const { tab } = this.state;
 
     return (
-			<div>
-				<div>Text "react-order"</div>
-			
-				<div>
-					<button type="button" onClick={this.reverse}>reverse</button>
-				</div>
+			<div className="container">
+				<h1>Test "react-order"</h1>
+
+				<ul className="nav nav-tabs" >
+						<li className="nav-item">
+							<button type="button" className={cn(`nav-link`, {"active": tab === "1"})} onClick={this.onClickTab} data-tab="1" >Common Array</button>
+						</li>
+
+						<li className="nav-item">
+							<button type="button" className={cn(`nav-link`, {"active": tab === "2"})} onClick={this.onClickTab} data-tab="2">Common Object</button>
+						</li>
+
+						<li className="nav-item">
+							<button type="button" className={cn(`nav-link`, {"active": tab === "3"})} onClick={this.onClickTab} data-tab="3">Order props</button>
+						</li>
+				</ul>
+
+				{tab === "1" && <Example1/>}
+				{tab === "2" && <Example2/>}
 				
-				<Order list={this.state.list}>
-					<div orderkey="first">First</div>	
-					<div orderkey="second">Second</div>	
-					<div orderkey="third">Third</div>	
-					<div orderkey="fourth">Fourth</div>	
-				</Order>
+
 			</div>
     )
   }

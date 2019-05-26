@@ -14,7 +14,7 @@ const Order = (props) => {
 		}
 	} else {
 		for(let item in list) {
-			keysOrders[item.toString()] = parseInt(list[item]) || 0;
+			keysOrders[item.toString()] = list[item] || 0;
 		}
 	}
 
