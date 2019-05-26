@@ -32,8 +32,8 @@ class Example extends Component {
 				<TestComponent2 order={2}/>
 				<TestComponent3 order={isReverse ? 1 : 3}/>
 			</Order>
-			)
-		}
+		)
+	}
 }
 ```
 
@@ -47,26 +47,19 @@ import Order from 'react-order'
 import TestComponent from './TestComponent'
 
 class Example extends Component {
-
-  render () {
+	render () {
 		const { isMobileVersion } = this.props;
-
-		const list = isMobileVersion ? 
-			["first", "second", "third"] 
-			: 
-			["third", "first", "second"];
-
+		const list = isMobileVersion ? ["first", "second", "third"] : ["third", "first", "second"];
     return (
-				<Order list={list}>
-						<TestComponent orderkey="first">First Component</TestComponent>	
-						<TestComponent orderkey="second">Second Component</TestComponent>	
-						<div orderkey="third">Third element</div>	
-				</Order>
-    )
-  }
+			<Order list={list}>
+				<TestComponent orderkey="first">First Component</TestComponent>	
+				<TestComponent orderkey="second">Second Component</TestComponent>	
+				<div orderkey="third">Third element</div>	
+			</Order>
+		)
+	}
 }
 ```
-
 
 OR 
 
@@ -88,15 +81,14 @@ class Example extends Component {
 				third: isMobileVersion 3 : 1
 		};
 
-
     return (
-				<Order list={list}>
-							<TestComponent orderkey="first">First Component</TestComponent>	
-							<TestComponent orderkey="second">Second Component</TestComponent>	
-							<div orderkey="third">Third element</div>	
-				</Order>
-    )
-  }
+			<Order list={list}>
+				<TestComponent orderkey="first">First Component</TestComponent>
+				<TestComponent orderkey="second">Second Component</TestComponent>
+				<div orderkey="third">Third element</div>
+			</Order>
+		)
+	}
 }
 ```
 
