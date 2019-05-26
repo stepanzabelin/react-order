@@ -25,15 +25,15 @@ class Example extends Component {
 
   render () {
 		const { isReverse } = this.props;
-
-    return (
-				<Order>
-						<TestComponent1 order={isReverse ? 3 : 1}/>	
-						<TestComponent2 order={2}/>	
-						<TestComponent3 order={isReverse ? 1 : 3}/>	
-				</Order>
-    )
-  }
+		
+		return (
+			<Order>
+				<TestComponent1 order={isReverse ? 3 : 1}/>
+				<TestComponent2 order={2}/>
+				<TestComponent3 order={isReverse ? 1 : 3}/>
+			</Order>
+			)
+		}
 }
 ```
 
