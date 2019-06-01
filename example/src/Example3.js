@@ -49,10 +49,11 @@ export default class Example1 extends Component {
 
 	
   render () {
+		const { list } = this.state;
 
     return (
 			<div>
-				<h2 className="mb-4">props "list" as object</h2>
+				<h2 className="mb-4">Local props "order"</h2>
 
 				<div className="card">
 					<div className="card-header">
@@ -62,12 +63,12 @@ export default class Example1 extends Component {
 					</div>
 
 					<div className="card-body">
-						<Order list={this.state.list}>
-							<TestComponent orderkey="first" className="alert alert-primary">&lt;FirstComponent/&gt;</TestComponent>	
-							<TestComponent orderkey="second" className="alert alert-secondary">&lt;SecondComponent/&gt;</TestComponent>	
-							<TestComponent orderkey="third" className="alert alert-success">&lt;ThirdComponent/&gt;</TestComponent>	
-							<TestComponent orderkey="fourth" className="alert alert-danger">&lt;FourthComponent/&gt;</TestComponent>
-							<TestComponent orderkey="fifth" className="alert alert-info">&lt;FifthComponent/&gt;</TestComponent>		
+						<Order>
+							<TestComponent order={list.first} className="alert alert-primary">&lt;FirstComponent/&gt;</TestComponent>	
+							<TestComponent order={list.second} className="alert alert-secondary">&lt;SecondComponent/&gt;</TestComponent>	
+							<TestComponent order={list.third} className="alert alert-success">&lt;ThirdComponent/&gt;</TestComponent>	
+							<TestComponent order={list.fourth} className="alert alert-danger">&lt;FourthComponent/&gt;</TestComponent>
+							<TestComponent order={list.fifth} className="alert alert-info">&lt;FifthComponent/&gt;</TestComponent>		
 						</Order>
 					</div>
 				

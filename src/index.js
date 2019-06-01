@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './styles.css'
  
 const Order = (props) => {
 	const { children, list }  = props;
-
+		
 	let keysOrders = {};
 
 	if(Array.isArray(list)) {
@@ -44,6 +43,20 @@ const Order = (props) => {
 			{newList}
 		</React.Fragment>
 	)
+};
+
+
+Order.defaultProps = {
+	children: [],
+	list: {}
+}
+
+Order.propTypes = {
+	children: PropTypes.array,
+	list: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]),
 };
 
 

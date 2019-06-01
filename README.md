@@ -3,7 +3,8 @@
 > 
 [![NPM](https://img.shields.io/npm/v/react-order.svg)](https://www.npmjs.com/package/react-order) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![DEMO](https://img.shields.io/badge/-demo-blue.svg)](https://stepanzabelin.github.io/react-order/)
 
-This is a simple wrapping component for sorting other components and elements.
+This is a simple wrapping component for sorting other components and dom elements.
+
 
 ## Install
 
@@ -12,6 +13,56 @@ npm install --save react-order
 ```
 
 ## Usage
+
+Components to sort are needed to wrap in this component.
+There are 3 ways to use:
+
+1. Each child component has a props order
+
+```jsx
+<Order>
+	<TestComponent1 order={num1}/>
+	<TestComponent2 order={num2}/>
+	<TestComponent3 order={num3}/>
+</Order>
+```
+
+
+2. Each child component has a props orderkey. The parent component has a props list which is an object
+
+```jsx
+const list = {
+	foo: 1,
+	bar: 2,
+	baz: 3
+}
+```
+```jsx
+		
+<Order list={list}>
+	<TestComponent1 orderkey="foo"/>
+	<TestComponent2 orderkey="bar"/>
+	<TestComponent3 orderkey="baz"/>
+</Order>
+```
+
+3. Each child component has a props orderkey. The parent component has a props list which is an array
+
+```jsx
+const list = ["foo", "bar", "baz"]; 
+```
+```jsx
+		
+<Order list={list}>
+	<TestComponent1 orderkey="foo"/>
+	<TestComponent2 orderkey="bar"/>
+	<TestComponent3 orderkey="baz"/>
+</Order>
+```
+
+### Complete examples
+
+Case 1:
 
 ```jsx
 import React, { Component } from 'react'
@@ -38,8 +89,7 @@ class Example extends Component {
 }
 ```
 
-OR 
-
+Case 2:
 
 ```jsx
 import React, { Component } from 'react'
@@ -70,9 +120,7 @@ class Example extends Component {
 }
 ```
 
-OR 
-
-
+Case 3:
 
 ```jsx
 import React, { Component } from 'react'

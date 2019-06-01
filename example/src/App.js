@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import Example1 from './Example1';
 import Example2 from './Example2';
+import Example3 from './Example3';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,9 +29,9 @@ export default class App extends react.Component {
 
     return (
 			<div className="container">
-				<h1>Test "react-order"</h1>
+				<h1 className="mb-4">Test "react-order"</h1>
 
-				<ul className="nav nav-tabs" >
+				<ul className="nav nav-tabs mb-4" >
 						<li className="nav-item">
 							<button type="button" className={cn(`nav-link`, {"active": tab === "1"})} onClick={this.onClickTab} data-tab="1" >Common Array</button>
 						</li>
@@ -46,7 +47,7 @@ export default class App extends react.Component {
 
 				{tab === "1" && <Example1/>}
 				{tab === "2" && <Example2/>}
-				
+				{tab === "3" && <Example3/>}
 
 			</div>
     )

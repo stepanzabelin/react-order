@@ -40,7 +40,7 @@ export default class Example1 extends Component {
 
     return (
 			<div>
-				<h2>props "list" as array</h2>
+				<h2 className="mb-4">props "list" as array</h2>
 
 				<div className="card">
 					<div className="card-header">
