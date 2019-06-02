@@ -14,10 +14,9 @@ npm install --save react-order
 
 ## Usage
 
-Components to sort are needed to wrap in this component.
-There are 3 ways to use:
+This component wraps your components that need to be sorted. There are 3 ways to use:
 
-1. Each child component has a props order
+1. Each child component has a props "order"
 
 ```jsx
 <Order>
@@ -27,8 +26,7 @@ There are 3 ways to use:
 </Order>
 ```
 
-
-2. Each child component has a props orderkey. The parent component has a props list which is an object
+2. Each child component has a props "orderkey". The parent component has a props "list" which is an object
 
 ```jsx
 const list = {
@@ -46,7 +44,7 @@ const list = {
 </Order>
 ```
 
-3. Each child component has a props orderkey. The parent component has a props list which is an array
+3. Each child component has a props "orderkey". The parent component has a props "list" which is an array
 
 ```jsx
 const list = ["foo", "bar", "baz"]; 

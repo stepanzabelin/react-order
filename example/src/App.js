@@ -29,7 +29,11 @@ export default class App extends react.Component {
 
     return (
 			<div className="container">
-				<h1 className="mb-4">Test "react-order"</h1>
+				<h1 className="mb-3">Test "react-order"</h1>
+
+				<div className="mb-3">
+					<a href="https://github.com/stepanzabelin/react-order" rel="nofollow">https://github.com/stepanzabelin/react-order</a>
+				</div>
 
 				<ul className="nav nav-tabs mb-4" >
 						<li className="nav-item">
