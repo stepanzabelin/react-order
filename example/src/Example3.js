@@ -9,51 +9,38 @@ export default class Example1 extends Component {
 	constructor(props) {
 		super(props);
 
-		this.initialOrder = {first:1, second:2, third:3, fourth:4, fifth:5};
-		this.finiteOrder = {first:5, second:4, third:3, fourth:2, fifth:1};
+		this.initialList = ["first", "second", "third", "fourth", "fifth"];
 
 		this.state = {
-			order: 'initial',
-			list: {...this.initialOrder}
+			list: [...this.initialList]
 		};
+
 	}
 
 	reverse = () => {
-		const { order } = this.state;
-
 		this.setState({
-			order: order === 'initial' ? 'finite' : 'initial',
-			list: order === 'initial' ? {...this.finiteOrder} : {...this.initialOrder}
-		});
+			list: this.state.list.reverse()
+		})
 	}
 
 	shuffle = () => {
-		const shuffleList = {};
-		
-		Object.keys(this.state.list).forEach(key => {
-			shuffleList[key] = Math.random();
-		});
-		
-		console.log(shuffleList);
-
 		this.setState({
-			list: shuffleList
-		});
+			list: this.state.list.sort((a, b) => 0.5 - Math.random())
+		})
 	}
 
 	reset = () => {
 		this.setState({
-			list: {...this.initialOrder}
-		});
+			list: [...this.initialList]
+		})
 	}
 
 	
   render () {
-		const { list } = this.state;
 
     return (
 			<div>
-				<h2 className="mb-4">Local props "order"</h2>
+				<h2 className="mb-4">"orderkey" + "list" is an array</h2>
 
 				<div className="card">
 					<div className="card-header">
@@ -63,15 +50,18 @@ export default class Example1 extends Component {
 					</div>
 
 					<div className="card-body">
-						<Order>
-							<TestComponent order={list.first} className="alert alert-primary">&lt;FirstComponent/&gt;</TestComponent>	
-							<TestComponent order={list.second} className="alert alert-secondary">&lt;SecondComponent/&gt;</TestComponent>	
-							<TestComponent order={list.third} className="alert alert-success">&lt;ThirdComponent/&gt;</TestComponent>	
-							<TestComponent order={list.fourth} className="alert alert-danger">&lt;FourthComponent/&gt;</TestComponent>
-							<TestComponent order={list.fifth} className="alert alert-info">&lt;FifthComponent/&gt;</TestComponent>		
+						<Order list={this.state.list}>
+							<TestComponent orderkey="first" className="alert alert-primary">&lt;FirstComponent/&gt;</TestComponent>	
+							<TestComponent orderkey="second" className="alert alert-secondary">&lt;SecondComponent/&gt;</TestComponent>	
+							<TestComponent orderkey="third" className="alert alert-success">&lt;ThirdComponent/&gt;</TestComponent>	
+							<TestComponent orderkey="fourth" className="alert alert-danger">&lt;FourthComponent/&gt;</TestComponent>
+							<TestComponent orderkey="fifth" className="alert alert-info">&lt;FifthComponent/&gt;</TestComponent>		
 						</Order>
 					</div>
-				
+					
+					<code>
+
+					</code>
 				</div>
 			</div>
     )

@@ -47,7 +47,7 @@ const list = {
 3. Each child component has a props "orderkey". The parent component has a props "list" which is an array
 
 ```jsx
-const list = ["foo", "bar", "baz"]; 
+const list = ["foo", "bar", "baz"] 
 ```
 ```jsx
 		
@@ -74,7 +74,7 @@ import TestComponent3 from './TestComponent3'
 class Example extends Component {
 
   render () {
-		const { isReverse } = this.props;
+		const { isReverse } = this.props
 		
 		return (
 			<Order>
@@ -99,13 +99,13 @@ import TestComponent from './TestComponent'
 class Example extends Component {
 
   render () {
-		const { isMobileVersion } = this.props;
+		const { isMobileVersion } = this.props
 
 		const list = {
 				first: isMobileVersion ? 1 : 2, 
 				second: isMobileVersion ? 2 : 3, 
 				third: isMobileVersion 3 : 1
-		};
+		}
 
     return (
 			<Order list={list}>
@@ -129,12 +129,12 @@ import TestComponent from './TestComponent'
 
 class Example extends Component {
 	render () {
-		const { isMobileVersion } = this.props;
+		const { isMobileVersion } = this.props
 
 		const list = isMobileVersion ? 
 			["first", "second", "third"] 
 			: 
-			["third", "first", "second"];
+			["third", "first", "second"]
 
     return (
 			<Order list={list}>

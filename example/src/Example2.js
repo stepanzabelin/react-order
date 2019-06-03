@@ -52,7 +52,7 @@ export default class Example1 extends Component {
 
     return (
 			<div>
-				<h2 className="mb-4">props "list" as object</h2>
+				<h2 className="mb-4">"orderkey" + "list" is an object</h2>
 
 				<div className="card">
 					<div className="card-header">

@@ -37,15 +37,15 @@ export default class App extends react.Component {
 
 				<ul className="nav nav-tabs mb-4" >
 						<li className="nav-item">
-							<button type="button" className={cn(`nav-link`, {"active": tab === "1"})} onClick={this.onClickTab} data-tab="1" >Common Array</button>
+							<button type="button" className={cn(`nav-link`, {"active": tab === "1"})} onClick={this.onClickTab} data-tab="1">props "order"</button>
 						</li>
 
 						<li className="nav-item">
-							<button type="button" className={cn(`nav-link`, {"active": tab === "2"})} onClick={this.onClickTab} data-tab="2">Common Object</button>
+							<button type="button" className={cn(`nav-link`, {"active": tab === "2"})} onClick={this.onClickTab} data-tab="2">props "list" is an object</button>
 						</li>
 
 						<li className="nav-item">
-							<button type="button" className={cn(`nav-link`, {"active": tab === "3"})} onClick={this.onClickTab} data-tab="3">Order props</button>
+							<button type="button" className={cn(`nav-link`, {"active": tab === "3"})} onClick={this.onClickTab} data-tab="3">props "list" is an array</button>
 						</li>
 				</ul>
 
