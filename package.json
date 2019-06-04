@@ -1,7 +1,7 @@
 {
   "name": "react-order",
-  "version": "0.0.6",
-  "description": "",
+  "version": "0.0.7",
+  "description": "This is a simple wrapping component for sorting other components and dom elements",
   "author": "stepanzabelin",
   "license": "MIT",
   "repository": "stepanzabelin/react-order",
@@ -11,7 +11,14 @@
   "engines": {
     "node": ">=8",
     "npm": ">=5"
-  },
+	},
+	"keywords": [
+		"react",
+		"order",
+		"sort",
+		"components replacing",
+		"replacement by places"
+	],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
