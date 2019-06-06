@@ -11,14 +11,14 @@
   "engines": {
     "node": ">=8",
     "npm": ">=5"
-	},
-	"keywords": [
-		"react",
-		"order",
-		"sort",
-		"components replacing",
-		"replacement by places"
-	],
+  },
+  "keywords": [
+    "react",
+    "order",
+    "sort",
+    "components replacing",
+    "replacement by places"
+  ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
