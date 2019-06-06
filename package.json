@@ -1,6 +1,6 @@
 {
   "name": "react-order",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "This is a simple wrapping component for sorting other components and dom elements",
   "author": "stepanzabelin",
   "license": "MIT",
